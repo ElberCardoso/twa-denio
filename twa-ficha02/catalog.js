@@ -18,3 +18,5 @@ export const categories = (list) =>
 
 export const withDiscount = (list, pct) =>
   list.map(i => ({ ...i, price: +(i.price * (1 - pct / 100)).toFixed(2) }))
+export const sortByPrice = (list, dir = 'asc') =>
+[...list].sort((a, b) => dir === 'desc' ? b.price - a.price : a.price - b.price)
